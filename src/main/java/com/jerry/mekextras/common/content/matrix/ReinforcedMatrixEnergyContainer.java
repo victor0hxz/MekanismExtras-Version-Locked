@@ -234,7 +234,8 @@ public class ReinforcedMatrixEnergyContainer implements IEnergyContainer {
    }
 
    public boolean isValidForExtraction(AutomationType automationType) {
-      return !automationType.isExternal();
+      // The port holder enforces input/output mode. External pull shares the same per-tick budget as push.
+        return true;
    }
 
    public @Range(from = 0L, to = Long.MAX_VALUE) long getCapacityAsLong() {
