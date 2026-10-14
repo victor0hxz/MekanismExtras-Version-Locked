@@ -115,6 +115,7 @@ public class TileEntityExtraCentrifugingFactory extends TileEntityExtraChemicalT
                 .setActive(active -> setActiveState(active, cacheIndex))
                 .setOnFinish(this::markForSave)
                 .setEnergyRequirements(energyContainer::getEnergyPerTick, energyContainer)
+                .setOperationsCost(com.jerry.mekextras.common.config.ExtraConfig.extraGeneralConfig.batchOperationsCost.get())
                 .setBaselineMaxOperations(() -> baselineMaxOperations);
     }
 

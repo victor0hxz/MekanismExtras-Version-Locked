@@ -92,6 +92,7 @@ public class TileEntityExtraItemStackToItemStackFactory
          .setCanHolderFunction(this::canFunction)
          .setActive(active -> this.setActiveState(active, cacheIndex))
          .setEnergyRequirements(this.energyContainer::getEnergyPerTick, this.energyContainer)
+         .setOperationsCost(com.jerry.mekextras.common.config.ExtraConfig.extraGeneralConfig.batchOperationsCost.get())
          .setRequiredTicks(this::getTicksRequired)
          .setOnFinish(this::markForSave)
          .setOperatingTicksChanged(operatingTicks -> this.progress[cacheIndex] = operatingTicks)

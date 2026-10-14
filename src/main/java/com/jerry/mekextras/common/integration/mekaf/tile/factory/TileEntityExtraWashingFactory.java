@@ -197,6 +197,7 @@ public class TileEntityExtraWashingFactory extends TileEntityExtraChemicalToChem
                 .setCanHolderFunction(this::canFunction)
                 .setActive(active -> setActiveState(active, cacheIndex))
                 .setEnergyRequirements(energyContainer::getEnergyPerTick, energyContainer)
+                .setOperationsCost(com.jerry.mekextras.common.config.ExtraConfig.extraGeneralConfig.batchOperationsCost.get())
                 .setBaselineMaxOperations(() -> baselineMaxOperations)
                 .setOnFinish(this::markForSave);
     }

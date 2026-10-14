@@ -134,6 +134,7 @@ public class TileEntityExtraStampingFactory extends TileEntityExtraMoreMachineIt
                 .setCanHolderFunction(this::canFunction)
                 .setActive(active -> setActiveState(active, cacheIndex))
                 .setEnergyRequirements(energyContainer::getEnergyPerTick, energyContainer)
+                .setOperationsCost(com.jerry.mekextras.common.config.ExtraConfig.extraGeneralConfig.batchOperationsCost.get())
                 .setRequiredTicks(this::getChemicalTicksRequired)
                 .setOnFinish(this::markForSave)
                 .setOperatingTicksChanged(operatingTicks -> progress[cacheIndex] = operatingTicks)

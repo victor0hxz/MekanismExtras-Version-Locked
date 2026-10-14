@@ -127,6 +127,7 @@ public class TileEntityExtraAlloyingFactory extends TileEntityExtraItemToItemFac
                 .setCanHolderFunction(this::canFunction)
                 .setActive(active -> setActiveState(active, cacheIndex))
                 .setEnergyRequirements(energyContainer::getEnergyPerTick, energyContainer)
+                .setOperationsCost(com.jerry.mekextras.common.config.ExtraConfig.extraGeneralConfig.batchOperationsCost.get())
                 .setRequiredTicks(this::getTicksRequired)
                 .setOnFinish(this::markForSave)
                 .setBaselineMaxOperations(this::getOperationsPerTick)

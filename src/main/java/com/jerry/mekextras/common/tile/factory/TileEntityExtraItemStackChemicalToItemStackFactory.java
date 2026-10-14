@@ -232,6 +232,7 @@ public class TileEntityExtraItemStackChemicalToItemStackFactory
          .setCanHolderFunction(this::canFunction)
          .setActive(active -> this.setActiveState(active, cacheIndex))
          .setEnergyRequirements(this.energyContainer::getEnergyPerTick, this.energyContainer)
+         .setOperationsCost(com.jerry.mekextras.common.config.ExtraConfig.extraGeneralConfig.batchOperationsCost.get())
          .setRequiredTicks(this::getChemicalTicksRequired)
          .setOnFinish(this::markForSave)
          .setOperatingTicksChanged(operatingTicks -> this.progress[cacheIndex] = operatingTicks)
